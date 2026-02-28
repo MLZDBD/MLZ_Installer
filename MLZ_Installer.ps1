@@ -1,7 +1,7 @@
 #Requires -Version 5.1
 $pluginName = "MLZ"
 # الرابط أدناه يشير إلى النسخة النظيفة التي تعمل 100%
-$pluginLink = "https://raw.githubusercontent.com/MLZDBD/MLZ-Plugin./refs/heads/main/MLZ_Clean_Version.zip"
+$pluginLink = "https://raw.githubusercontent.com/MLZDBD/MLZ-Plugin./main/MLZ_Clean_Version.zip"
 
 $steamPath = (Get-ItemProperty -Path "HKCU:\Software\Valve\Steam" -Name "SteamPath" ).SteamPath
 if (-not $steamPath) { exit 1 }
