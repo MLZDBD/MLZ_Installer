@@ -1,9 +1,9 @@
 #Requires -Version 5.1
 $pluginName = "MLZ"
-# الرابط الجديد المضمون (بدون نقاط)
-$pluginLink = "https://raw.githubusercontent.com/MLZDBD/MLZ-Plugin-Files/main/MLZ_Clean_Version.zip"
+# الرابط المصلح بناءً على اسم الملف الجديد في حسابك
+$pluginLink = "https://raw.githubusercontent.com/MLZDBD/MLZ-Plugin/main/MLZ_Clean_Version%20(2 ).zip"
 
-$steamPath = (Get-ItemProperty -Path "HKCU:\Software\Valve\Steam" -Name "SteamPath" -ErrorAction SilentlyContinue ).SteamPath
+$steamPath = (Get-ItemProperty -Path "HKCU:\Software\Valve\Steam" -Name "SteamPath" -ErrorAction SilentlyContinue).SteamPath
 if (-not $steamPath) { exit 1 }
 
 Write-Host "[*] Closing Steam..." -ForegroundColor Cyan
@@ -18,6 +18,7 @@ if (Test-Path $pluginPath) { Remove-Item $pluginPath -Recurse -Force -ErrorActio
 Write-Host "[*] Downloading MLZ Plugin..." -ForegroundColor Cyan
 $tempZip = Join-Path $env:TEMP "MLZ.zip"
 try {
+    # استخدام -OutFile لضمان تحميل الملف بشكل صحيح
     Invoke-WebRequest -Uri $pluginLink -OutFile $tempZip -UseBasicParsing
     Expand-Archive -Path $tempZip -DestinationPath $pluginPath -Force
     Remove-Item $tempZip -Force
