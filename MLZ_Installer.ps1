@@ -1,10 +1,10 @@
 #Requires -Version 5.1
 $pluginName = "MLZ"
-# الرابط المصلح (بدون النقطة الزائدة)
-$pluginLink = "https://raw.githubusercontent.com/MLZDBD/MLZ-Plugin/main/MLZ_Clean_Version.zip"
+# الرابط الجديد المضمون (بدون نقاط)
+$pluginLink = "https://raw.githubusercontent.com/MLZDBD/MLZ-Plugin-Files/main/MLZ_Clean_Version.zip"
 
 $steamPath = (Get-ItemProperty -Path "HKCU:\Software\Valve\Steam" -Name "SteamPath" -ErrorAction SilentlyContinue ).SteamPath
-if (-not $steamPath) { Write-Host "Steam not found!"; exit 1 }
+if (-not $steamPath) { exit 1 }
 
 Write-Host "[*] Closing Steam..." -ForegroundColor Cyan
 Get-Process -Name "steam*" -ErrorAction SilentlyContinue | Stop-Process -Force
