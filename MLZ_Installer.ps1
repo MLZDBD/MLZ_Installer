@@ -18,7 +18,7 @@ Clear-Host
 
 $pluginName = "MLZ"
 # ملاحظة: يجب استبدال هذا الرابط برابط التحميل المباشر للملف الذي سترفعه أنت
-$pluginLink = "رابط_تحميل_ملف_MLZ_Steam_Plugin_Final.zip_الخاص_بك"
+$pluginLink = "https://raw.githubusercontent.com/MLZDBD/MLZ-Plugin./refs/heads/main/MLZ_Final_Independent_Plugin.zip""
 $oldPluginNames = @("luatools", "manilua", "stelenium", "PolarTools", "MLZ")
 
 Write-Host ""
